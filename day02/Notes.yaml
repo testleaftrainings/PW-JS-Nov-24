@@ -1,0 +1,142 @@
+Callback function
+
+getBrowserName(getBrowserVersion)
+
+function checkAvailability(movieName, callback) {
+  console.log(`Checking movie name`)
+  setTimeout(() => {
+    console.log(`Movie is available`)
+    callback();
+  }, 2000)
+}
+
+function playMovie() {
+    console.log(`Now playing the movie`)
+}
+
+checkAvailability("Lord of the Rings", playMovie)
+
+
+Template literal - `${argument}`
+
+
+authentication("user123", (user)=> {
+    log(User authenticated)
+    fetchPreferences(user, (preferences) => {
+      log(Preferences)
+      fetchRecommendations(preferences, (movies) => {
+        log()
+        playMovie((movies))
+      })
+    })
+})
+
+Callback function Takeaway
+  - It is a function that is passed as an argument to another function
+  - It is executed later after some operation is completed
+  - It is used when dealing with asynchronous operations
+
+Best Practices for variable naming conventions:
+* Meaningful names
+* a to z, A to Z, 0 to 9, _ (underscore)
+camelCase - browserName
+PascalCase - class - PlaywrightWrapper
+
+
+Function
+function functionName(parameters) {
+    Function body 
+    return value; //Optional
+}
+
+function addNumbers(a,b) {
+    sum = a+b;
+    console.log(sum);
+    // return a+b;
+}
+
+Types of Function
+1. Named function
+2. Function Expression
+3. Arrow Function 
+4. Asynchronous function
+
+IIFE (Immediately Invoked Function Expression)
+Higher Order functions (Callbacks)
+
+1. function functionName(parameters) {
+
+}
+
+2. Function Expression 
+const functionName = function (parameters)
+
+Anonymous function
+function () {
+
+}
+
+const welcomeMessage = function (name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(welcomeMessage(`Dhanashree`));
+
+3. Arrow Function - shorter synatx
+const welcomeMessage = printUserName(name) => `Hello, ${name}`;
+
+4. Asynchronous function
+async / await 
+async function () {
+  await page.goto("")
+
+  //Navigate to amazon.in
+  //Type bags in Search box
+}
+
+function initializeApp() {
+  setupEventListeners();
+  loadInitialData();
+}
+
+function setupEventListeners() {
+  //Detailed implementation
+}
+
+function loadInitialData() {
+  //Implemetation
+}
+
+Operators
+1. Arithmetic Operators
+    Addition - +
+    Subtraction - '-'
+    Multiplication - *
+    Division - / 
+    const a = 10;
+    const b = 5
+    const result = 2 ( return quotient)
+    Modulus - % (return remainder)
+    a%b = 0
+
+2. Assignment Operators
+ = , +=
+ x=10
+ x+=5 //x = x +5
+
+3. Comparison Operators
+boolean value
+ == , === (Strict equal to)
+ !=     5!='5'
+ !==
+
+4. Logical Operators
+&& - Logical AND
+let isAdmin = true;
+let hasAccess = true;
+if(isAdmin && hasAccess) {
+  log("Access granted")
+}
+! -Logical NOT
+
+
