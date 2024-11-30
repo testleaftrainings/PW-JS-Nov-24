@@ -1,0 +1,122 @@
+Conditional Statements
+  - perform different actions based on different conditions
+  Types
+  1. if statement
+  2. if else
+  3. if else if else statement
+  4. switch statement
+  5. Ternary operator (conditional)
+
+1. if statement
+Syntax
+  if(condition){
+    //Code to execute if the condition is true
+  }
+
+let age =18;
+if(age>=18){
+    Add two products - Debit card & Credit card
+}
+
+2. if-else 
+if(condition) {
+  //Code to execute if the condition is true
+} else {
+  //Code to execute if the condition is false
+}
+
+let age =18;
+if(age>=18){
+    Add two products - Debit card & Credit card
+} else {
+    Add one product - Debit Card
+}
+
+if else if else 
+if(condition1) {
+    //Code to execute if condition1 is true
+}
+else if (condition2){
+    //Code to execute if condition 2 is true
+} else {
+    //Code to execute if none of the conditions are true
+}
+
+Multiple conditions to check 
+num = -87
+number>0 - positive
+number<0 - negative
+number=0 - neutral
+
+Switch statement
+switch(expression) {
+  case value1:
+  //Code to execute if the expression===value1;
+  break;
+  case value2:
+  //Code to execute if the expression===value2;
+  break;
+  default:
+    //Code to execute if no cases match
+}
+
+
+Looping Statements
+1. for loop
+for(initialization; condition; increment/decrement) {
+  //Code to be executed
+}
+
+while loop
+while(condition) {
+  //Code to be executed
+}
+
+let isValid = false;
+while(!isValid) {
+  let userInput = prompt("Enter a number greater than 10");
+  if(userInput>10){
+    isValid = true
+  }
+}
+
+isValid = false
+!isValid = true
+while(true){
+  Enter the value: 9, 8, 11
+  if(11>10){
+    isValid = true  //isValid = true
+  }
+}
+while(false) {
+
+}
+
+do while
+    execute the code at least one time
+    after doing the task at least one time, it will check the condition
+
+Pagination
+while(next button is enabled) {
+  Collect the data
+  Click
+}
+
+do {
+    Collect the data
+} while(next button is enabled) {
+
+}
+
+P, l, a, y, w, r, i, g, h, t
+1  2  3  4  5  6  7  8  9  10
+0  1  2  3  4  5  6  7  8  9 
+
+slice() - takes a start index and an optional end index
+          supports negative indices
+          can use negative index to count from the end of the string
+
+substring() - takes a start index and an optional end index
+            doesn't support negative indices
+            treats the negative index as 0
+            swapping can be done (start index > end index)
