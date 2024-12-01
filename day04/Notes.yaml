@@ -1,0 +1,61 @@
+Introduction to Playwright
+
+Selenium
+Puppeteer
+Cypress
+WebDriver IO
+
+Websockets - full duplex communication
+CDP - Chrome DevTools Protocols
+
+Key Components of Playwright
+1. Browser instance - copy of the browser (browser)
+2. Browser Context - an isolated environment within the browser instance
+                   - akin to incognito window
+                   - operate independently with its own cookies, local storage, and cache
+                   - making it possible to run tests in parallel without any shared state
+3. Page - an individual tab or a window within the browser context
+        - helps to interact with the web elements
+
+
+Single browser instance --> multiple browser contexts [Guest, QA automation, Ranjini, Testleaf]
+  Single browser context [Ranjini] --> multiple pages [Leaftaps, Amazon, Netflix]
+
+To create a Playwright test file - filename.spec.ts
+To run the test file - npx playwright test filename.spec.ts
+To open the test report - npx playwright show-report
+
+Default mode - headless
+
+Three levels of configurations
+1. CLI - highest priority [execute in command line]
+2. Test level configuration - higher than config file [execute using Open in Integrated Terminal]
+If you execute from the root dir, test level configurations will overwrite the playwright.config.ts properties
+3. playwright.config.ts (default configuration) - least priority [execute test from where the config file is present- root dir]
+
+
+
+Setup process
+ // Create a browser instance
+    const browser = await chromium.launch({headless: false, channel: 'chrome'});
+
+    // Create the browser context
+    const context = await browser.newContext();
+
+    // Create a new page
+    const page = await context.newPage();
+
+    Teardown
+    // Close the page
+    await page.close();
+
+    //Close the browser context
+    await context.close();
+
+    // Close the browser
+    await browser.close();
+
+  Fixtures - controls the initial setup and teardown process during the test execution
+  1. Page fixture
+  2. Context fixture
+  3. Request fixture
