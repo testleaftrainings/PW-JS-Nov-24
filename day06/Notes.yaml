@@ -1,0 +1,40 @@
+Promise
+3 states
+1. Fulfilled
+2. Rejected
+3. Pending
+
+Arrays
+1. Dynamic size
+2. Heterogeneous elements
+
+Using Array Literal
+let names = ["Dhanashree, "Rajkumar", "Kiran"]
+
+Using Array Constructor
+let numbers = new Array(5); //Creates an array with 5 emplty slots
+[<5 empty items>]
+
+let numbers = new Array(21, 13, 54, 27, 64);
+
+let emptyArray = [];
+
+TypeScript
+
+superset of JavaScript
+static typing
+tsc --> convert .ts into .js
+
+Global installation
+npm install -g typescript
+
+Local installation
+npm install typescript --save-dev
+
+To check the version --> tsc --version
+To run a .ts file
+tsc filename.ts
+node filename.js
+
+ts-node filename.ts
+npm install -g ts-node
