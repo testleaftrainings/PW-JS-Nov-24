@@ -1,0 +1,108 @@
+Playwright Locators
+
+DOM - Document Object Model
+
+HTML - HyperText Markup Language
+
+Basics 
+Tags - instructions - enclosed within the angle brackets
+<html>
+<head>
+    <title> Amazon India </title>
+</head>
+<body>
+<div>
+  <span>
+    <input> 
+    </input>
+  </span>
+</div>
+<
+
+
+</html>
+
+Locators
+1. CSS Locators
+2. XPath
+3. Playwright inbuilt locators
+
+<button id="j_idt88:j_idt91" name="j_idt88:j_idt91" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left ui-button-outlined ui-state-hover" onclick="PrimeFaces.bcn(this,event,[function(event){if(alert('I am simple alert.')); document.getElementById('simple_result').innerHTML='You have successfully clicked an alert' },function(event){PrimeFaces.ab({s:&quot;j_idt88:j_idt91&quot;,f:&quot;j_idt88&quot;});return false;}]);" type="submit" role="button" aria-disabled="false"><span class="ui-button-icon-left ui-icon ui-c pi pi-external-link"></span><span class="ui-button-text ui-c">Show</span></button>
+
+Playwright getBys
+1. getByRole() - to locate a web element by its role (button, link, checkbox, alert)
+await page.getByRole('button', {name: "Show"}).click();
+2. getByText() - to locate a web element by the text content
+await page.getByText("Show").click();
+3.getByLabel() - to locate a web element by the label's text
+await page.getByLabel("Username").fill("demosalesmanager");
+4. getByPlaceholder() - to locate an input by its placeholder value
+5. getByAltText() - to locate a web element by its images/logos (text alternatives)
+await page.getByAltText("Playwright logo").isVisible();
+6. getByTitle() - to locate a web element by its title attribute
+<span title = "Sign In">
+page.title()
+7. getByTestId() - to locate a web element based on its data-testid attribute
+page.getByTestId("overlay").click();
+
+CSS Selectors
+1. Type Selector
+tagname <button> 
+page.locator("button").click();
+
+2. Id - #idValue
+page.locator("#username");
+
+3. class - .classValue
+page.locator(".inputLogin").fill("demosalesmanager");
+
+4. Attribute selector - [attributeName = 'attributeValue']
+<input  type="text"  name="USERNAME" size="50">
+page.locator("[name='USERNAME']")
+[type='text']
+[aria-label = 'Amazon.in']
+
+Substring
+Starts with attribute selector
+Select an elememt with an attribute that starts with a specific value
+tagname[attribute^='value']
+
+<div class="inventory_list">
+<div class="inventory_item">
+<div class="inventory_item_img">
+<div class="inventory_item_label">
+
+div[class^='inventory']
+page.locator("div[class^='inventory']")
+id='submit_button_743'
+
+Ends with attribute selector
+Select an element with an attribute that ends with a specific value
+tagname[attribute$='value']
+<button class="btn_primary btn_inventory">ADD TO CART</button>
+<button class="btn_secondary btn_inventory">ADD TO CART</button>
+<button class="btn btn_inventory">ADD TO CART</button>
+page.locator("button[class$='btn_inventory']")
+
+Contains attribute selector
+Select an element with an attribute containing a specific substring
+tagname[attribute*='value']
+button[class*='btn']
+
+5. Descendant Combinator
+ancestor descendat
+form input
+
+6. Child Combinator
+parent>child
+p>input
+
+7. Adjacent sibling combinator
+element+adjacent
+
+8. General sibling combintor
+element~sibling
+
+XPath Locators
+1. Absolute XPath - /html/head/body/div[3]/span/
+2. Relative XPath -
