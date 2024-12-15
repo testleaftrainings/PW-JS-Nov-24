@@ -1,0 +1,114 @@
+Object literals
+
+Key-value pair
+keys - string/symbols (properties)
+values - any data type
+
+const objectName = {
+    key1: value1,
+    key2: value2,
+    key3: value3
+}
+
+const selectors = {
+  usernameField: "input[#username]",
+  passwordField : "input[#password]",
+  loginButton: "#Login"
+}
+
+1. Using dot notation
+objectName.key
+selectors.usernameField
+page.locator(selectors.usernameField).fill("demosalesmanager");
+2. Using brackets
+let name = "Yoga";
+key = [name];
+first-name
+
+
+let objectName {
+    Key1: datatype,
+    Key2: datatype
+} = {
+    key1: value,
+    key2: value
+}
+
+Type Aliases
+type alisname = existingType
+type StringOrNumber = string|number
+
+type User = {
+  id:number,
+  name: string
+}
+
+let profile:User
+
+type BrowserAction = 'navigate'|'click'|'hover'|'type'
+
+const performAction = (action: BrowserAction) => {
+  switch(action) {
+      case: 'click':
+      console.log("Performing click action")
+  }
+}
+
+performAction('click')
+
+Intersection Type
+type typeName = Type1 & Type2 & Type3
+
+type User = {
+  name: string;
+  email: string;
+}
+
+type Admin = {
+  role: string
+}
+
+type AdminUser = User & Admin
+
+const admin: AdminUser = {
+  name: "Hari",
+  email: "hari@gmail.com",
+  role: "superadmin"
+}
+
+1. Define the type supportedBrowser = Chrome|Edge
+2. Define the browserVersion = 131|130
+3. Define the browserProfile = supportedBrowser & browserVersion (object literal)
+4. Define the function and pass the argument (browser)
+5. Launch the browser
+6. Call the function
+
+type User = {
+  name: string;
+  email: string;
+}
+
+const response = { "name": "Vidya", "email": "vidya@gmail.com"}
+const user = JSON.parse(response) as User;
+console.log(user.name);
+console.log(user.email);
+
+Enum
+set of named constants
+ 1. Numeric enums
+ enum Status {
+    Active = 1, 
+    Inactive,
+    Suspended
+ }
+
+enum TestEnvironment {
+  Development = "DEV",
+  Testing = "QA",
+  Staging = "STG",
+  Production = "PROD"
+}
+
+Optional Parameter
+function functionName(param1:type, param2?:type) {
+}
