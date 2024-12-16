@@ -1,0 +1,123 @@
+Handling dropdown
+1. select tag
+<select id="">
+  <option value = "option1"> Option1 </option>
+  <option value= "option2"> Option2 </option>
+
+selectOption method
+1. Select by value
+<select id ="category-filter">
+  <option value="101">Electronics</option>
+  <option value="102">Books</option>
+  <option value="103">Bags</option>
+  <option value="104">Clothing</option>
+2. Select by label 
+3. Select by index
+
+2. non-select tag - div, ul
+1. Locate the dropdown - click /enter the value
+2. Locate the particular option from the dropdown list - click it
+<div id = "#custom-dropdown">
+  <div class = " "> Option 1</div>
+  <div class = " "> Option 2</div>
+  <div class = " "> Option 3</div>
+
+Multiple matches - nth(i) 
+nth(0) - 1st element
+nth(1) - 2nd element
+nth(2) - 3nd element
+
+Test timeout
+by default - 30s
+beforeEach, test execution
+
+beforeAll, afterEach, afterAll - 30 s
+beforeAll 
+test suite 
+  test1
+  afterEach 
+  test2
+  afterEach 
+
+
+  test 2000
+
+afterAll
+
+expect - assertions - 5s (default)
+await expect(locator).toHaveText('Submit', {timeout: 20000});
+
+Global timeout - CI/CD
+
+action timeout 40s
+timeout - 60
+
+.spec.ts
+test1
+test2
+test.only
+fullyParallel: true
+workers : 3
+8 test cases 
+workers: 4
+Each worker - 2 test cases
+fullyParallel: false - sequential
+
+forbidOnly: true,
+test.only
+forbidOnly: process.env.CI ? true : false,
+
+retries: process.env.CI ? 2 : 2,
+retries: 1
+
+workers: process.env.CI ? 3 : undefined,
+
+Assertions
+1. Generic assertions - asserting the values in the tests
+toBe, toEqual, toBeGreaterThan, toContain, toContainEqual
+
+2. Locator assertions - asserting the locators
+toBeVisible, toBeEnabled, toHaveAttribute
+
+3. Page Assertions
+title, url
+
+4. Snapshot Assertions
+
+5. API Reference Assertions
+
+Default timeout - 5s or 5000ms
+
+1. Auto retry assertions
+Polling - 5s
+0.1s
+0.1s -
+0.1
+0.1
+
+2. Non-retry assertions - which do not have the auto retrying mechanism
+static text validation
+Expected string: Assigned
+Received string: ""
+immediate feedbacke -assertion failure
+
+1. Hard Asertion - if the assertion is failed, the test execution is stopped immediately -failure report
+  - Asserting the Username textbox to be enabled
+  - Enter the username
+  - Asserting the Password textbox to be enabled //failed
+  - Enter the password
+  - Asserting the Login button to be visible
+  - Click the Login button
+2. Soft Assertion - If the assertion is failed, it will not stop the test execution, the test will continue.
+Failure report - after the entire test run is complete
+  - Asserting the Username textbox to be enabled
+  - Enter the username
+  - Asserting the Password textbox's label - Password //failed
+  - Enter the password
+  - Asserting the Login button to be visible
+  - Click the Login button
+  expect.soft()
+
+Negating matchers
+expect(title).not.toBe('Amazon');
+expect(page.locator("#discount")).not.toContain(40%)
