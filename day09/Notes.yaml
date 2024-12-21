@@ -1,0 +1,100 @@
+Auto-waiting
+Actionability checks
+
+1. Visiblity
+2. Stability
+3. Receive events
+4. Enabled
+5. Editable 
+
+.click({force:true})
+
+Dialog/Alert
+1. You cannot inspect the alert
+2. Alerts are from the application (javascript)
+
+Types of Alerts
+1. Modal dialog - cannot be inspected
+    - Simple Alert
+      a message + Ok button
+    - Confirm Alert
+      a message + Ok/Cancel buttons
+      accept the alert or dismiss the alert
+    - Prompt Alert
+      a message + Prompt text box + Ok/Cancel
+      enter the input and accept the alert
+      dismiss the alert
+    - beforeUnload alert
+      page.close({runBeforeUnload:true})
+      a message + Leave/Stay
+      accept the alert / dismiss the alert
+
+2. Non-modal dialog - can be inspected
+Sweet alert 
+
+Methods
+1. accept("Testleaf") - to accept the alert
+2. dismiss() - to cancel the alert
+3. message() - returns the message displayed
+4. type() - returns the type of the alert - dialog.type() === 'Prompt'
+    if(Alert is Prompt){
+      Accept the alert with a value - accept("Testleaf")
+    } else {
+      Dismiss the alert
+    }
+5. defaultValue() - returns the default value of the prompt dialog
+
+Playwright auto dismiss the alerts in the page
+
+page.on(){
+}
+page.off('dialog', dialog)
+
+Event - dialog
+1. You have to turn on the event listerner, before the click action is performed on the page
+
+page.off('dialog', dialog=> {
+})
+
+Frame vs iframe
+
+<frameset cols = 50%,50%>
+
+    <frame src="page1.html">
+    <frame src="page2.html">
+
+</frameset>
+
+iframe - inline frame
+
+<html>
+  <head>
+    <title> 
+    </title>
+  </head>
+  <body>
+    <iframe src= "google.com">
+      <html>
+         <head>
+          <title> 
+          </title>
+            </head>
+              <body>
+                <iframe>
+
+                </iframe>
+                </body>
+              </html>
+              </iframe>
+            </body>
+            </head>
+            </html>
+
+Methods to interact with the frames
+1. page.frame - simple and straightforward
+    - id/name
+    - url
+    - index
+2. page.frameLocator - efficient, complex scenarios / nested iframes
+
+
