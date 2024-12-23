@@ -1,0 +1,23 @@
+Interacting with Frames
+1. page.frame - name or url 
+2. page.frameLocator - 
+page.locator.frameLocator()
+locator.contentFrame()
+<div class="">
+  <iframe>
+    contents
+
+locator.contentFrame()
+frameLocator.owner()
+
+
+Promise.all([promise1, promise2, promise3])
+
+1. Wait for the new window (page) event triggered when a button is clicked - When Promise is resolved - new page
+2. Perform the click action that triggers the new window - Promise is resolved - undefined
+
+const array = [1,2,3]
+const [a,b,c] = array
+console.log(a) //1
+
+const [newPage2, newPage3] = Ptomise.all([0,1,2])
