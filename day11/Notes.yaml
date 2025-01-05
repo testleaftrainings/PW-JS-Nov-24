@@ -1,0 +1,33 @@
+API - Application Programming Interface
+
+set of rules that allow different applications to communicate with each other
+
+HTTP Methods - Verb - actions to be performed on a particular resource
+1. POST - creates a new resource on the server
+2. GET - retrieve the data from the server
+3. PUT - update a resource that already exists on the server
+4. PATCH - partially updates the existing resource or modifying only the specific data
+5. DELETE - remove a resource from the server
+
+CRUD - Create, Read, Update, Delete
+
+Headers - pass additional information about the request/response between the client and the server
+Request headers (client side)
+    - Content-type - specifies the format of the data [json, pdf, xml, yaml, text]
+    - Authorization - credentials information
+    - Accept - format of the response that the client expects
+
+Response headers - include responses from the server
+      - Set-cookie - cookies stored by the client for future requests
+
+Request Parameters
+1. Query Parameters
+https://amazon.com/products?category=laptop&max_price=100000
+
+2. Path parameter
+https://amazon.in/products/123
+
+Request body - data sent by the client to the server in an HTTP request.
+XML - <name>Priyanka</name>
+
+Response body - data sent from the server back to the client after processing the request
