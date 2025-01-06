@@ -1,0 +1,17 @@
+Global Variables
+
+1. Extract the access token from the OAuth API response and save it as a global variable
+2. Pass the global variable in the authorization header of all the HTTP requests
+
+APIRequest
+const apiRequest = playwright.request
+const apiRequestContext = await apiRequest.newContext(); //isolated
+
+APIRequestContext
+browserContext.request and page.request  //shared cookie storage
+
+APIResponse
+const apiResponse = apiRequestContext.patch()
+apiResponse.body()
+apiResponse.json()
+apiResponse.status()

@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "7a195785-a76d-4186-928b-3393ff7e065b",
+		"name": "PW-JS-Nov-Salesforce-Leads",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28988315",
+		"_collection_link": "https://solar-space-220954.postman.co/workspace/PW_API~2c83a84c-94f6-466c-996d-ae99b6626e8d/collection/28988315-7a195785-a76d-4186-928b-3393ff7e065b?action=share&source=collection_link&creator=28988315"
+	},
+	"item": [
+		{
+			"name": "Generate the access token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "3MVG9pRzvMkjMb6lZlt3YjDQwe.HYIl3TLqTtN5gSZd0eu9FRMgGrFBgIMG9NBBttWHlmR.RKvAXyY4xeyZFu",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "2CD9BC047B2EB6DD92C77BF005DDDBCEE46E155237749F3764367B1E58B56F64",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "ranjini.r@testleaf.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Qeagle@123",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.salesforce.com/services/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new lead",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5j00000C8pLO!ARoAQDTxMMfcJUGb4El0gVrfg12a.b7poKKWbNEP6VUctI0zDJJl6PTENbzAetqx50XWCNsvb_JdX8X57fTzv4mVpIUhni2X",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"FirstName\": \"Hari\",\r\n    \"LastName\": \"Prasanna\",\r\n    \"Company\": \"nStore Retech\",\r\n    \"Email\": \"hari@nstore.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a specific lead",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5j00000C8pLO!ARoAQDTxMMfcJUGb4El0gVrfg12a.b7poKKWbNEP6VUctI0zDJJl6PTENbzAetqx50XWCNsvb_JdX8X57fTzv4mVpIUhni2X",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/00QJ400000IBQX3MAP",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"00QJ400000IBQX3MAP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all leads",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5j00000C8pLO!ARoAQDTxMMfcJUGb4El0gVrfg12a.b7poKKWbNEP6VUctI0zDJJl6PTENbzAetqx50XWCNsvb_JdX8X57fTzv4mVpIUhni2X",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a specific field",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5j00000C8pLO!ARoAQDTxMMfcJUGb4El0gVrfg12a.b7poKKWbNEP6VUctI0zDJJl6PTENbzAetqx50XWCNsvb_JdX8X57fTzv4mVpIUhni2X",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Salutation\": \"Mr.\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/00QJ400000IBQX3MAP",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"00QJ400000IBQX3MAP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a lead",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer 00D5j00000C8pLO!ARoAQDTxMMfcJUGb4El0gVrfg12a.b7poKKWbNEP6VUctI0zDJJl6PTENbzAetqx50XWCNsvb_JdX8X57fTzv4mVpIUhni2X",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://testleaf30-dev-ed.develop.my.salesforce.com/services/data/v58.0/sobjects/Lead/00QJ400000IBQX3MAP",
+					"protocol": "https",
+					"host": [
+						"testleaf30-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v58.0",
+						"sobjects",
+						"Lead",
+						"00QJ400000IBQX3MAP"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
