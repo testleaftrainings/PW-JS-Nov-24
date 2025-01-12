@@ -1,0 +1,7 @@
+File Upload
+
+<input type = "file">
+setInputFiles()
+
+setInputFiles(['',''])
+setInputFiles([])
