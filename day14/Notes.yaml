@@ -1,0 +1,67 @@
+Shadow DOM
+1. Playwright can pierce the shadow root and interact with the elements
+2. Playwright doesn't support XPath to locate an element present inside the shadow root
+
+try{
+
+} catch {
+
+} finally {
+  context.tracing.stop();
+}
+
+afterEach
+{
+  stop tracing
+}
+
+test.only()
+test.skip(browserName){
+test()
+browserName ='firefox'
+}
+
+test.fail()
+test.fixme()
+test.slow()
+test.setTimeout
+test(title, callback){
+
+}
+
+test.info()
+test.step()
+
+test.beforeAll(async() => {
+  console.log("Executed only once")
+})
+test.beforeEach(async() => {
+
+})
+test.afterEach()
+test.afterAll()
+
+
+beforeAll
+beforeEach
+test1
+afterEach
+beforeEach
+test2
+afterEach
+beforeEach
+test3
+afterEach
+beforeEach
+test4
+afterEach
+beforeEach
+test5
+afterEach
+afterAll
+
+To execute test cased based on tags
+npx playwright test --grep "@regression"
+
+To execute test cases other than a specific tag
+npx playwright test --grep-invert "@regression"
