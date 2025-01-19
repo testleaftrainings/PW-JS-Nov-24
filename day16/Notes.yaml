@@ -1,0 +1,27 @@
+Encapsulation
+
+Getters: Used to get the value of a property
+Setters: Used to set or update the value of a property
+
+class User {
+
+private _username: string
+private _password: string
+
+//Getter for username
+public get username(): string {
+  return this._username;
+}
+//Setter for username (validation)
+public set username(newUsername: string) {
+    if(newUsername.length===0){
+      throw new Error("username cannot be empty")
+    }
+    this._username = newUsername
+}
+
+public displayCredentials() {
+}
+}
+
+1. Page Object Model
